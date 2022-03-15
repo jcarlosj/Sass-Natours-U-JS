@@ -101,6 +101,17 @@ body {
     }
 }
 
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY( 30px );
+    }
+    100% {
+        opacity: 1;
+        transform: translateX( 0 );
+    }
+}
+
 .btn:link, 
 .btn:visited {
     border-radius: 100px;
@@ -145,4 +156,9 @@ body {
 .btn:hover::after {
     opacity: 0;
     transform: scaleX( 1.4 ) scaleY( 1.6 );
+}
+
+.btn-animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
 }
