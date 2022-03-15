@@ -106,6 +106,7 @@ body {
     border-radius: 100px;
     display: inline-block;
     padding: 15px 40px;
+    position: relative;
     text-decoration: none;
     text-transform: uppercase;
     transition: all .2s;
@@ -124,3 +125,24 @@ body {
     color: #777;
 }
 
+.btn::after {
+    border-radius: 100px;
+    content: '';
+    display: inline-block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #FFF;
+}
+
+.btn:hover::after {
+    opacity: 0;
+    transform: scaleX( 1.4 ) scaleY( 1.6 );
+}
