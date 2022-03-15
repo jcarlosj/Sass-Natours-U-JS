@@ -44,12 +44,14 @@ body {
 .text-box {
     left: 50%;
     position: absolute;
+    text-align: center;
     top: 50%;
     transform: translate( -50%, -50% );
 }
 .heading-primary {
     backface-visibility: hidden;
     color: #FFF;
+    margin-bottom: 60px;
     text-transform: uppercase;
 }
 .heading-primary-main {
@@ -98,3 +100,27 @@ body {
         transform: translateX( 0 );
     }
 }
+
+.btn:link, 
+.btn:visited {
+    border-radius: 100px;
+    display: inline-block;
+    padding: 15px 40px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all .2s;
+}
+.btn:hover {
+    box-shadow: 0 10px 20px rgba( 0, 0, 0, .2 );
+    transform: translateY( -3px );
+}
+.btn:active {
+    box-shadow: 0 5px 10px rgba( 0, 0, 0, .2 );
+    transform: translateY( -1px );
+}
+
+.btn-white {
+    background-color: #FFF;
+    color: #777;
+}
+
