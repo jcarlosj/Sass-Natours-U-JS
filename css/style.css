@@ -8,17 +8,26 @@
 }
 
 /** Reset all elements */
-* {
-    box-sizing: border-box;
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
     margin: 0;
     padding: 0;
 }
 
 html {
-    font-size: 10px;    /** root (font-size): Ahora 1rem equivale a 10px, no 16px (valor por defecto) */
+    font-size: 62.5%;   /** root (font-size): 1rem equivale a 10px, no 16px (valor por defecto). 
+                         *      Es una mala practica definir valor en px y no ayuda al comportamiento cuando se hace zoom en el navegador.
+                         *      Entonces se calcula el valor de 10px evitando usar unidades de medida con la siguiente formula 10px (unidad deseada en base 10) / 16px (valor por defecto del navegador) = 62.5% (porcentaje que representa la medida estandar deseada)
+                         *          0.625% * 16px = 10px        (10px seria el valor por defecto, es recomendable transformarlo de esta manera para que quede en base 10)
+                         *          0.625% * 20px = 12.5px      (12.5px seria el valor por defecto para este caso)
+                         *          0.625% * 22px = 13.75px     (13.75px seria el valor por defecto para este caso)
+                         */
 }
 
 body {
+    box-sizing: border-box;
     color: #777;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
