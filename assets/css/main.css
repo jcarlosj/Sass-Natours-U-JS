@@ -1,6 +1,183 @@
-body {
+/** Variable Colors */
+:root {
+  --light-green: #7ed56f;
+  --light-green-opacity-8: rgba( 126, 213, 111, 0.8 );
+  --medium-green: #55c57a;
+  --dark-green: #28b485;
+  --dark-green-opacity-8: rgba( 40, 180, 133, 0.8 );
+}
+
+/** Reset all elements */
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
   margin: 0;
   padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  /** root (font-size): 1rem equivale a 10px, no 16px (valor por defecto). 
+   *      Es una mala practica definir valor en px y no ayuda al comportamiento cuando se hace zoom en el navegador.
+   *      Entonces se calcula el valor de 10px evitando usar unidades de medida con la siguiente formula 10px (unidad deseada en base 10) / 16px (valor por defecto del navegador) = 62.5% (porcentaje que representa la medida estandar deseada)
+   *          0.625% * 16px = 10px        (10px seria el valor por defecto, es recomendable transformarlo de esta manera para que quede en base 10)
+   *          0.625% * 20px = 12.5px      (12.5px seria el valor por defecto para este caso)
+   *          0.625% * 22px = 13.75px     (13.75px seria el valor por defecto para este caso)
+   */
+}
+
+body {
+  box-sizing: border-box;
+  color: #777;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  padding: 3rem;
+}
+
+.header {
+  background-image: linear-gradient(to right bottom, var(--light-green-opacity-8), var(--dark-green-opacity-8)), url("../img/hero.jpg");
+  background-position: top;
+  background-size: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  height: 95vh;
+  position: relative;
+}
+
+.header__logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+
+.header__logo {
+  height: 3.5rem;
+}
+
+.header__text-box {
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+  backface-visibility: hidden;
+  color: #FFF;
+  margin-bottom: 6rem;
+  text-transform: uppercase;
+}
+
+.heading-primary--main {
+  /* animation-delay: 3s; */
+  animation-duration: 1s;
+  /* animation-iteration-count: 3; */
+  animation-name: moveInLeft;
+  animation-timing-function: ease-out;
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+}
+
+.heading-primary--sub {
+  animation: moveInRight 1s ease-out;
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.74rem;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.btn:link,
+.btn:visited {
+  border-radius: 10rem;
+  display: inline-block;
+  font-size: 1.6rem;
+  padding: 1.5rem 4rem;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.3rem);
+}
+
+.btn:active {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.1rem);
+}
+
+.btn--white {
+  background-color: #FFF;
+  color: #777;
+}
+
+.btn::after {
+  border-radius: 10rem;
+  content: "";
+  display: inline-block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn--white::after {
+  background-color: #FFF;
+}
+
+.btn:hover::after {
+  opacity: 0;
+  transform: scaleX(1.4) scaleY(1.6);
+}
+
+.btn--animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
 }
 
 /*# sourceMappingURL=main.css.map */
