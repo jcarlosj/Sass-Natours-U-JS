@@ -1,82 +1,3 @@
-/** Variable Colors */
-/** Reset all elements */
-*,
-*::after,
-*::before {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  font-size: 62.5%;
-  /** root (font-size): 1rem equivale a 10px, no 16px (valor por defecto). 
-   *      Es una mala practica definir valor en px y no ayuda al comportamiento cuando se hace zoom en el navegador.
-   *      Entonces se calcula el valor de 10px evitando usar unidades de medida con la siguiente formula 10px (unidad deseada en base 10) / 16px (valor por defecto del navegador) = 62.5% (porcentaje que representa la medida estandar deseada)
-   *          0.625% * 16px = 10px        (10px seria el valor por defecto, es recomendable transformarlo de esta manera para que quede en base 10)
-   *          0.625% * 20px = 12.5px      (12.5px seria el valor por defecto para este caso)
-   *          0.625% * 22px = 13.75px     (13.75px seria el valor por defecto para este caso)
-   */
-}
-
-body {
-  box-sizing: border-box;
-  color: #777;
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  line-height: 1.7;
-  padding: 3rem;
-}
-
-.header {
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
-  background-position: top;
-  background-size: cover;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  height: 95vh;
-  position: relative;
-}
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
-.header__logo {
-  height: 3.5rem;
-}
-.header__text-box {
-  left: 50%;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.heading-primary {
-  backface-visibility: hidden;
-  color: #FFF;
-  margin-bottom: 6rem;
-  text-transform: uppercase;
-}
-.heading-primary--main {
-  /* animation-delay: 3s; */
-  animation-duration: 1s;
-  /* animation-iteration-count: 3; */
-  animation-name: moveInLeft;
-  animation-timing-function: ease-out;
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-}
-.heading-primary--sub {
-  animation: moveInRight 1s ease-out;
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.74rem;
-}
-
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -113,6 +34,55 @@ body {
     transform: translateX(0);
   }
 }
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+body {
+  color: #777;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  padding: 3rem;
+}
+
+.heading-primary {
+  backface-visibility: hidden;
+  color: #FFF;
+  margin-bottom: 6rem;
+  text-transform: uppercase;
+}
+.heading-primary--main {
+  /* animation-delay: 3s; */
+  animation-duration: 1s;
+  /* animation-iteration-count: 3; */
+  animation-name: moveInLeft;
+  animation-timing-function: ease-out;
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+}
+.heading-primary--sub {
+  animation: moveInRight 1s ease-out;
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.74rem;
+}
+
 .btn:link, .btn:visited {
   border-radius: 10rem;
   display: inline-block;
@@ -157,6 +127,69 @@ body {
 .btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
+}
+
+.row {
+  background-color: #eee;
+  margin: 0 auto;
+  max-width: 114rem;
+}
+.row:not(:last-child) {
+  margin-bottom: 8rem;
+}
+.row::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.row [class^=col-] {
+  background-color: orange;
+  float: left;
+}
+.row [class^=col-]:not(:last-child) {
+  margin-right: 6rem;
+}
+.row .col-1-of-2 {
+  width: calc(( 100% - 6rem ) / 2);
+}
+.row .col-1-of-3 {
+  width: calc(( 100% - 2 * 6rem ) / 3);
+}
+.row .col-1-of-4 {
+  width: calc(( 100% - 3 * 6rem ) / 4);
+}
+.row .col-2-of-3 {
+  width: calc( 2 * ( ( 100% - 2 * 6rem ) / 3 ) + 6rem );
+}
+.row .col-2-of-4 {
+  width: calc( 2 * ( ( 100% - 3 * 6rem ) / 4 ) + 6rem );
+}
+.row .col-3-of-4 {
+  width: calc( 3 * ( ( 100% - 3 * 6rem ) / 4 ) + 2 * 6rem );
+}
+
+.header {
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  background-position: top;
+  background-size: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  height: 95vh;
+  position: relative;
+}
+.header__logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+.header__logo {
+  height: 3.5rem;
+}
+.header__text-box {
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /*# sourceMappingURL=main.css.map */
