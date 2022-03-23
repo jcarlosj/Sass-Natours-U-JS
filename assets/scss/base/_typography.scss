@@ -31,3 +31,21 @@ body {
         letter-spacing: 1.74rem;
     }
 }
+
+.heading-secondary {
+    background-clip: text;
+    background-image: linear-gradient( to right, $color-primary-light, $color-primary-dark );
+    color: transparent;
+    font-size: 3.5rem;
+    font-weight: 700;
+    display: inline-block;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+    transition: all .2s;
+    -webkit-background-clip: text;
+
+    &:hover {
+        text-shadow: .5rem 1rem 2rem rgba( $color-black, .2 );
+        transform: skewY( 2deg ) skewX( 15deg ) scale( 1.1 );
+    }
+}
