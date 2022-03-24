@@ -251,21 +251,38 @@ body {
 
 .card {
   perspective: 150rem;
+  position: relative;
+  height: 50rem;
 }
 .card__side {
-  background-color: orangered;
   color: #FFF;
   font-size: 2rem;
   height: 50rem;
   text-transform: uppercase;
-  transition: all 0.8s;
+  transition: all 0.8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
 }
 .card__side--front {
-  background-color: orange;
+  background-color: #FFF;
+  color: #55C57A;
 }
 .card__side--back {
-  background-color: green;
   transform: rotateY(180deg);
+}
+.card__side--back-bgcolor-1 {
+  background-image: linear-gradient(to right bottom, #FFB900, #FF7730);
+}
+.card__side--back-bgcolor-2 {
+  background-image: linear-gradient(to right bottom, #7ED56F, #28b485);
+}
+.card__side--back-bgcolor-3 {
+  background-image: linear-gradient(to right bottom, #2998FF, #5643FA);
 }
 .card:hover .card__side--front {
   transform: rotateY(180deg);
