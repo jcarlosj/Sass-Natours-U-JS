@@ -14,6 +14,7 @@
         // background-color: orangered;
         float: left;
         height: 15rem;
+        position: relative;
         shape-outside: circle( 50% at 50% 50% );
         transform: translateX( -2rem ) skewX( 12deg );
         width: 15rem;
@@ -23,6 +24,16 @@
 
     &__image {
         height: 100%;
+    }
+    &__caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate( -50%, -50% );
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
     }
     &__text {
         transform: skewX( 12deg );
