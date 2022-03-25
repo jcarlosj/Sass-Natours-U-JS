@@ -1,0 +1,30 @@
+.story {
+    // border: 1px solid;
+    background-color: $color-white;
+    border-radius: 3px;
+    box-shadow: 0 3rem 6rem rgba( $color-black,  .1 );
+    font-size: $default-font-size;
+    margin: 0 auto;
+    padding: 6rem;
+    padding-left: 9rem;
+    transform: skewX( -12deg );
+    width: 75%;
+
+    &__shape {
+        // background-color: orangered;
+        float: left;
+        height: 15rem;
+        shape-outside: circle( 50% at 50% 50% );
+        transform: translateX( -2rem ) skewX( 12deg );
+        width: 15rem;
+
+        clip-path: circle( 50% at 50% 50% );
+    }
+
+    &__image {
+        height: 100%;
+    }
+    &__text {
+        transform: skewX( 12deg );
+    }
+}
