@@ -460,6 +460,29 @@ body {
   width: 100%;
 }
 
+.form__group:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.form__input {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+  border: transparent;
+  border-bottom: 3px solid transparent;
+  color: inherit;
+  display: block;
+  font-family: inherit;
+  font-size: 1.5rem;
+  padding: 1.2rem 2rem;
+  width: 90%;
+}
+.form__input::placeholder {
+  color: #999;
+}
+.form__input:focus {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #55C57A;
+  outline: none;
+}
 .row {
   margin: 0 auto;
   max-width: 114rem;
