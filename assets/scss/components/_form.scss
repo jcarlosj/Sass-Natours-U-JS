@@ -51,6 +51,9 @@
         display: inline-block;
         width: 48%;
     }
+    &__radio-input {
+        display: none;
+    }
     &__radio-label {
         font-size:$default-font-size;
         cursor: pointer;

@@ -137,7 +137,7 @@ body {
   margin-bottom: 10rem;
 }
 
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   border-radius: 10rem;
   display: inline-block;
   font-size: 1.6rem;
@@ -146,6 +146,8 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   transition: all 0.2s;
+  border: none;
+  cursor: pointer;
 }
 .btn:hover {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
@@ -155,8 +157,9 @@ body {
   opacity: 0;
   transform: scaleX(1.4) scaleY(1.6);
 }
-.btn:active {
+.btn:active, .btn:focus {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  outline: none;
   transform: translateY(-0.1rem);
 }
 .btn--white {
@@ -503,6 +506,9 @@ body {
 .form__radio-group {
   display: inline-block;
   width: 48%;
+}
+.form__radio-input {
+  display: none;
 }
 .form__radio-label {
   font-size: 1.6rem;
