@@ -47,4 +47,12 @@
         transform: translateY( -4rem );
     }
 
+    &__radio-group {
+        display: inline-block;
+        width: 48%;
+    }
+    &__radio-label {
+        font-size:$default-font-size;
+        cursor: pointer;
+    }
 }

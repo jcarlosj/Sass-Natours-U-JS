@@ -500,6 +500,14 @@ body {
   visibility: hidden;
   transform: translateY(-4rem);
 }
+.form__radio-group {
+  display: inline-block;
+  width: 48%;
+}
+.form__radio-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+}
 
 .row {
   margin: 0 auto;
