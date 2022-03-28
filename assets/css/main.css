@@ -445,16 +445,17 @@ body {
 }
 
 .bg-video {
-  border: 3px solid orangered;
   height: 100%;
   left: 0;
   position: absolute;
   opacity: 0.15;
+  overflow: hidden;
   top: 0;
   width: 100%;
   z-index: -1;
 }
 .bg-video__content {
+  object-fit: cover;
   height: 100%;
   width: 100%;
 }
