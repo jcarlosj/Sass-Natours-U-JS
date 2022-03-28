@@ -13,6 +13,7 @@
         font-family: inherit;
         font-size: 1.5rem;
         padding: 1.2rem 2rem;
+        transition: all .3s;
         width: 90%;
 
         &::placeholder {
@@ -24,7 +25,26 @@
             border-bottom: 3px solid $color-primary;
             outline: none;
         }
+        &:focus:invalid {
+            border-bottom: 3px solid $color-secondary-dark;
+        }
     }
 
-    &__label {}
+    &__label {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-left: 2rem;
+        margin-top: .7rem;
+        display: block;
+        transition: all .3s;
+    }
+
+    // + Select the next sibling element / ~ Select all sibling elements
+    // El orden de las clases deben ir conforme el orden de los elementos
+    &__input:placeholder-shown + &__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY( -4rem );
+    }
+
 }
