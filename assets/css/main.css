@@ -543,6 +543,32 @@ body {
   opacity: 1;
 }
 
+.navigation__checkbox {
+  position: fixed;
+  top: 6rem;
+  right: 6rem;
+}
+.navigation__botton {
+  border: 2px solid orange;
+  background-color: #FFF;
+  height: 7rem;
+  position: fixed;
+  top: 6rem;
+  right: 6rem;
+  width: 7rem;
+  border-radius: 50%;
+}
+.navigation__background {
+  background-image: radial-gradient(#7ED56F, #28b485);
+  border-radius: 50%;
+  border: 2px solid blue;
+  height: 6rem;
+  position: fixed;
+  top: 6.5rem;
+  right: 6.5rem;
+  width: 6rem;
+  z-index: 1;
+}
 .row {
   margin: 0 auto;
   max-width: 114rem;
