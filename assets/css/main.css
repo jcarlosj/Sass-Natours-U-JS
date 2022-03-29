@@ -544,6 +544,7 @@ body {
 }
 
 .navigation__checkbox {
+  display: none;
   position: fixed;
   top: 6rem;
   right: 6rem;
@@ -557,6 +558,7 @@ body {
   right: 6rem;
   width: 7rem;
   border-radius: 50%;
+  z-index: 4;
 }
 .navigation__background {
   background-image: radial-gradient(#7ED56F, #28b485);
@@ -566,9 +568,37 @@ body {
   position: fixed;
   top: 6.5rem;
   right: 6.5rem;
+  transform: scale(80);
   width: 6rem;
-  z-index: 1;
+  z-index: 2;
 }
+.navigation__nav {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+}
+.navigation__list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+}
+.navigation__item {
+  margin: 1rem;
+}
+.navigation__link {
+  font-size: 3rem;
+  font-weight: 300;
+  color: #FFF;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
 .row {
   margin: 0 auto;
   max-width: 114rem;
