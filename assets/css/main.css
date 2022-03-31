@@ -550,8 +550,8 @@ body {
   right: 6rem;
 }
 .navigation__botton {
-  border: 2px solid orange;
   background-color: #FFF;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
   height: 7rem;
   position: fixed;
   top: 6rem;
@@ -563,21 +563,22 @@ body {
 .navigation__background {
   background-image: radial-gradient(#7ED56F, #28b485);
   border-radius: 50%;
-  border: 2px solid blue;
   height: 6rem;
   position: fixed;
   top: 6.5rem;
   right: 6.5rem;
-  transform: scale(80);
+  transition: transform 0.8s;
   width: 6rem;
   z-index: 2;
 }
 .navigation__nav {
   height: 100vh;
+  opacity: 0;
   position: fixed;
   top: 0;
-  right: 0;
-  width: 100%;
+  left: 0;
+  transition: all 0.8s;
+  width: 0;
   z-index: 2;
 }
 .navigation__list {
@@ -587,6 +588,7 @@ body {
   transform: translate(-50%, -50%);
   list-style: none;
   text-align: center;
+  width: 100%;
 }
 .navigation__item {
   margin: 1rem;
@@ -612,6 +614,13 @@ body {
   background-position: 100%;
   color: #55C57A;
   transform: translateX(1rem);
+}
+.navigation__checkbox:checked ~ .navigation__background {
+  transform: scale(80);
+}
+.navigation__checkbox:checked ~ .navigation__nav {
+  opacity: 1;
+  width: 100%;
 }
 
 .row {

@@ -7,8 +7,9 @@
     }
 
     &__botton {
-        border: 2px solid orange;
+        //border: 2px solid orange;
         background-color: $color-white;
+        box-shadow: 0 1rem 3rem rgba( $color-black, .1 );
         height: 7rem;
         position:fixed; 
         top: 6rem;
@@ -21,22 +22,25 @@
     &__background {
         background-image: radial-gradient( $color-primary-light, $color-primary-dark );
         border-radius: 50%;
-        border: 2px solid blue;
+        // border: 2px solid blue;
         height: 6rem;
         position: fixed;
         top: 6.5rem;
         right: 6.5rem;
-        transform: scale( 80 );     // Controla crecimiento radial del background
+        //transform: scale( 80 );     // Controla crecimiento radial del background
+        transition: transform .8s;
         width: 6rem;
         z-index: 2;
     }
 
     &__nav {
         height: 100vh;
+        opacity: 0;             // Hace trasparente el elemento y todos sus hijos
         position: fixed;
         top: 0;
-        right: 0;
-        width: 100%;
+        left: 0;                // Hace que el elemento entre por la izquierda en la animacion
+        transition: all .8s;
+        width: 0;               // Reduce el ancho del elemento y todo lo que contiene
         z-index: 2;
     }
 
@@ -47,6 +51,7 @@
         transform: translate( -50%, -50% );
         list-style: none;
         text-align: center;
+        width: 100%;
     }
 
     &__item {
@@ -79,5 +84,13 @@
             color: $color-primary;
             transform: translateX( 1rem );
         }
+    }
+
+    &__checkbox:checked ~ &__background {
+        transform: scale( 80 );
+    }
+    &__checkbox:checked ~ &__nav {
+        opacity: 1;
+        width: 100%;
     }
 }
