@@ -28,7 +28,7 @@
         top: 6.5rem;
         right: 6.5rem;
         //transform: scale( 80 );     // Controla crecimiento radial del background
-        transition: transform .8s;
+        transition: transform .8s cubic-bezier( 0.86, 0, 0.07, 1 );     // Personaliza la curva de velocidad de la animacion
         width: 6rem;
         z-index: 2;
     }
@@ -39,7 +39,7 @@
         position: fixed;
         top: 0;
         left: 0;                // Hace que el elemento entre por la izquierda en la animacion
-        transition: all .8s;
+        transition: all .8s cubic-bezier( 0.68, -0.55, 0.256, 1.55 );     // Personaliza la curva de velocidad de la animacion
         width: 0;               // Reduce el ancho del elemento y todo lo que contiene
         z-index: 2;
     }
