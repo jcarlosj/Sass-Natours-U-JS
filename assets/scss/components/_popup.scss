@@ -25,6 +25,7 @@
 
     &__right {
         display: table-cell;
+        padding: 3rem 5rem;
         vertical-align: middle;
         width: 66.666666%;
     }
@@ -34,6 +35,22 @@
         width: 100%;
     }
 
-    &__text {}
+    &__text {
+        -moz-column-count: 2;
+        -moz-column-gap: 4rem;       // 1em = 14px (font-size of the current element)
+        -moz-column-rule:  1px solid $color-gray-e;
+
+        column-count: 2;
+        column-gap: 4rem;       // 1em = 14px (font-size of the current element)
+        column-rule:  1px solid $color-gray-e;
+
+        font-size: 1.4rem;  
+        margin-bottom: 4rem;
+
+        -moz-hyphens: auto;
+        -ms-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;    
+    }
 
 }

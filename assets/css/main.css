@@ -570,6 +570,7 @@ body {
 }
 .popup__right {
   display: table-cell;
+  padding: 3rem 5rem;
   vertical-align: middle;
   width: 66.666666%;
 }
@@ -577,6 +578,21 @@ body {
   display: block;
   width: 100%;
 }
+.popup__text {
+  -moz-column-count: 2;
+  -moz-column-gap: 4rem;
+  -moz-column-rule: 1px solid #EEE;
+  column-count: 2;
+  column-gap: 4rem;
+  column-rule: 1px solid #EEE;
+  font-size: 1.4rem;
+  margin-bottom: 4rem;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
 .navigation__checkbox {
   display: none;
   position: fixed;
