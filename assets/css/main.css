@@ -560,10 +560,23 @@ body {
   background-color: #FFF;
   border-radius: 3px;
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
-  height: 50rem;
+  display: table;
+  overflow: hidden;
   width: 75%;
 }
-
+.popup__left {
+  display: table-cell;
+  width: 33.333333%;
+}
+.popup__right {
+  display: table-cell;
+  vertical-align: middle;
+  width: 66.666666%;
+}
+.popup__img {
+  display: block;
+  width: 100%;
+}
 .navigation__checkbox {
   display: none;
   position: fixed;
