@@ -8,6 +8,7 @@
 }
 
 html {
+    // #px (deseados 10px) / #px (por defecto 16px) = 62.5% >>> para que 1rem equivalga a #px deseados
     font-size: 62.5%;   // root (font-size): 1rem equivale a 10px, no 16px (valor por defecto). 
                         //      Es una mala practica definir valor en px y no ayuda al comportamiento cuando se hace zoom en el navegador.
                         //      Entonces se calcula el valor de 10px evitando usar unidades de medida con la siguiente formula 10px (unidad deseada en base 10) / 16px (valor por defecto del navegador) = 62.5% (porcentaje que representa la medida estandar deseada)
@@ -15,37 +16,21 @@ html {
                         //          0.625% * 20px = 12.5px      (12.5px seria el valor por defecto para este caso)
                         //          0.625% * 22px = 13.75px     (13.75px seria el valor por defecto para este caso)
 
-    
-    // Forma tradicional aprovechando la anidacion de elementos de Sass
-    @media ( max-width: 600px ) {
-        font-size: 50%;
+    @include respond( big-desktop ) {   // width <= 1800
+        font-size: 75%;     // 12px (deseados) / 16px (por defecto) = 75% >>> para que 1rem equivalga 12px
     }
 
-    // Mixin sin parametros
-    @include respond-phone {
-        font-size: 50%;
+    // Implementa mixin: Tamaño de fuente por defecto para cada dispositivo (usando breakpoints)
+    @include respond( tab-land ) {  // width < 1200?
+        font-size: 56.25%;  // 9px (deseados) / 16px (por defecto) = 56.25% >>> para que 1rem equivalga 9px
+    }
+    @include respond( tab-port ) {  // width < 900?
+        font-size: 50%;     // 8px (deseados) / 16px (por defecto) = 50% >>> para que 1rem equivalga 8px
+    }
+    @include respond( phone ) {  // width < 600?
+        font-size: 30%;     // 4.8px (deseados) / 16px (por defecto) = 30% >>> para que 1rem equivalga 4.8px
     }
 
-    // Mixin con parametros
-    @include respond( phone ) {
-        font-size: 50%;
-    }
-    @include respond( tab-portrait ) {
-        font-size: 60%;
-    }
-    @include respond( tab-land ) {
-        font-size: 70%;
-    }
-    @include respond( big-desktop ) {
-        font-size: 80%;
-    }
-}
-
-// Forma tradicional usando CSS
-@media ( max-width: 600px ) {
-    html {
-        font-size: 50%;
-    }
 }
 
 body {
