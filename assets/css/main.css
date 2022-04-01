@@ -549,8 +549,15 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
   width: 100vw;
   z-index: 5;
+}
+.popup:target {
+  opacity: 1;
+  visibility: visible;
 }
 .popup__content {
   left: 50%;
