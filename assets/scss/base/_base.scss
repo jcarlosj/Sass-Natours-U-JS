@@ -14,6 +14,38 @@ html {
                         //          0.625% * 16px = 10px        (10px seria el valor por defecto, es recomendable transformarlo de esta manera para que quede en base 10)
                         //          0.625% * 20px = 12.5px      (12.5px seria el valor por defecto para este caso)
                         //          0.625% * 22px = 13.75px     (13.75px seria el valor por defecto para este caso)
+
+    
+    // Forma tradicional aprovechando la anidacion de elementos de Sass
+    @media ( max-width: 600px ) {
+        font-size: 50%;
+    }
+
+    // Mixin sin parametros
+    @include respond-phone {
+        font-size: 50%;
+    }
+
+    // Mixin con parametros
+    @include respond( phone ) {
+        font-size: 50%;
+    }
+    @include respond( tab-portrait ) {
+        font-size: 60%;
+    }
+    @include respond( tab-land ) {
+        font-size: 70%;
+    }
+    @include respond( big-desktop ) {
+        font-size: 80%;
+    }
+}
+
+// Forma tradicional usando CSS
+@media ( max-width: 600px ) {
+    html {
+        font-size: 50%;
+    }
 }
 
 body {
