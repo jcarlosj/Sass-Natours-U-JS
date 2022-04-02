@@ -297,17 +297,45 @@ body {
   width: 55%;
   z-index: 1;
 }
+@media (max-width: 56.25em) {
+  .composition__photo {
+    float: left;
+    position: relative;
+    width: 33.333333%;
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+  }
+}
 .composition__photo--1 {
   left: 0;
   top: -2rem;
+}
+@media (max-width: 56.25em) {
+  .composition__photo--1 {
+    transform: scale(1.2);
+    top: 0;
+  }
 }
 .composition__photo--2 {
   right: 0;
   top: 2rem;
 }
+@media (max-width: 56.25em) {
+  .composition__photo--2 {
+    transform: scale(1.3);
+    top: -1rem;
+    z-index: 2;
+  }
+}
 .composition__photo--3 {
   left: 20%;
   top: 10rem;
+}
+@media (max-width: 56.25em) {
+  .composition__photo--3 {
+    left: 0;
+    transform: scale(1.1);
+    top: 1rem;
+  }
 }
 .composition__photo:hover {
   box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
@@ -315,8 +343,20 @@ body {
   transform: scale(1.05) translateY(-0.5rem);
   z-index: 2;
 }
+@media (max-width: 56.25em) {
+  .composition__photo:hover {
+    box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.25);
+    transform: scale(1.2) translateY(0.5rem);
+    z-index: 3;
+  }
+}
 .composition:hover .composition__photo:not(:hover) {
   transform: scale(0.95);
+}
+@media (max-width: 56.25em) {
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(1);
+  }
 }
 
 .feature-box {
@@ -1024,7 +1064,7 @@ body {
 }
 @media (max-width: 56.25em) {
   .section-features {
-    padding: 15rem 0;
+    padding: 10rem 0;
   }
 }
 .section-features > * {
