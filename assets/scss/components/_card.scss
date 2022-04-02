@@ -145,4 +145,43 @@
         font-size: 6rem;
         font-weight: 100;
     }
+
+    @include respond( tab-port ) {
+        height: auto;
+
+        &__side {
+            // background-color: orangered;
+            color: $color-white;
+            font-size: 2rem;
+            height: auto;
+            position: relative;
+            border-radius: 3px;
+
+            &--back {
+                transform: rotateY( 0 );
+            }
+        }
+
+        &:hover &__side--front {
+            transform: rotateY( 0 );
+        }
+
+        // Reverso del Card
+        &__cta {
+            position: relative;
+            top: 0;
+            left: 0;
+            text-align: center;
+            transform: translate( 0 );
+            width: 100%;
+        }
+
+        &__price-box {
+            margin-bottom: 8rem;
+        }
+        &__price-value {
+            font-size: 6rem;
+        }
+    }
+
 }
