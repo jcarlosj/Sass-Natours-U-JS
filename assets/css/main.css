@@ -10,6 +10,8 @@
  *   - tab-port
  *   - tab-land
  *   - big-desktop
+ *
+ * Order: Base + Typography > General Layout + Grid > Page Layout > Components
  *     
  *     1em = 16px
  */
@@ -83,6 +85,12 @@ html {
 
 body {
   box-sizing: border-box;
+  padding: 3rem;
+}
+@media (max-width: 56.25em) {
+  body {
+    padding: 0;
+  }
 }
 
 body {
@@ -90,7 +98,6 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.7;
-  padding: 3rem;
 }
 
 .heading-primary {
@@ -110,12 +117,23 @@ body {
   font-weight: 400;
   letter-spacing: 3.5rem;
 }
+@media (max-width: 37.5em) {
+  .heading-primary--main {
+    font-size: 5rem;
+    letter-spacing: 1rem;
+  }
+}
 .heading-primary--sub {
   animation: moveInRight 1s ease-out;
   display: block;
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1.74rem;
+}
+@media (max-width: 37.5em) {
+  .heading-primary--sub {
+    letter-spacing: 0.5rem;
+  }
 }
 
 .heading-secondary {
@@ -129,6 +147,16 @@ body {
   text-transform: uppercase;
   transition: all 0.2s;
   -webkit-background-clip: text;
+}
+@media (max-width: 56.25em) {
+  .heading-secondary {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .heading-secondary {
+    font-size: 2.5rem;
+  }
 }
 .heading-secondary:hover {
   text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
