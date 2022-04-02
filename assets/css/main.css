@@ -559,6 +559,18 @@ body {
   transform: skewX(-12deg);
   width: 75%;
 }
+@media (max-width: 56.25em) {
+  .story {
+    padding: 4rem;
+    padding-left: 7rem;
+    width: 100%;
+  }
+}
+@media (max-width: 37.5em) {
+  .story {
+    transform: skewX(0);
+  }
+}
 .story__shape {
   backface-visibility: hidden;
   float: left;
@@ -569,6 +581,11 @@ body {
   width: 15rem;
   clip-path: circle(50% at 50% 50%);
 }
+@media (max-width: 37.5em) {
+  .story__shape {
+    transform: translateX(-2rem) skewX(0);
+  }
+}
 .story__img {
   backface-visibility: hidden;
   height: 100%;
@@ -577,6 +594,11 @@ body {
 }
 .story__text {
   transform: skewX(12deg);
+}
+@media (max-width: 37.5em) {
+  .story__text {
+    transform: skewX(0);
+  }
 }
 .story__caption {
   backface-visibility: hidden;
